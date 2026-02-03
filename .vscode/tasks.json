@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Current Koan Tests",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["test"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$rustc"
+            ]
+        },
+        {
+            "label": "Run All Tests",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["test", "--workspace"],
+            "group": "test",
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Check Code",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["check"],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Format Code",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["fmt"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Lint Code (Clippy)",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["clippy", "--all-targets", "--all-features"],
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "Check Progress",
+            "type": "shell",
+            "command": "${workspaceFolder}/check_progress.ps1",
+            "isBackground": false,
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,19 +1,30 @@
-# Rust Koans
-
+# Rust Build
 /target
 **/*.rs.bk
 *.pdb
 Cargo.lock
 
-# IDE
+# IDE & Editors
 .vscode/*
 !.vscode/tasks.json
 !.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *~
+.DS_Store
 
 # OS
-.DS_Store
 Thumbs.db
+.AppleDouble
+.LSOverride
+*.log
+
+# Project Specific
+*.iml
+.gradle/
+build/
+.env
+.env.local

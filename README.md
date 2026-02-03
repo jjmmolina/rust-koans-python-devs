@@ -3,6 +3,8 @@
 [![Rust Version](https://img.shields.io/badge/Rust-1.75+-orange?style=flat&logo=rust)](https://www.rust-lang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![CI](https://github.com/jjmmolina/rust-koans-python-devs/workflows/CI%20-%20Build%20&%20Test/badge.svg)](https://github.com/jjmmolina/rust-koans-python-devs/actions)
+[![GitHub Stars](https://img.shields.io/github/stars/jjmmolina/rust-koans-python-devs?style=social)](https://github.com/jjmmolina/rust-koans-python-devs)
 
 > Aprende Rust mediante Test-Driven Development (TDD) con un enfoque especial para desarrolladores Python.
 
@@ -137,16 +139,16 @@ rust-koans/
 
 ## 📖 Documentación Adicional
 
-- **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** - Explicación detallada de la metodología de koans
-- **[GUIA.md](GUIA.md)** - Tutorial paso a paso con ejemplos
-- **[SOLUCIONES.md](SOLUCIONES.md)** - ⚠️ Soluciones completas (úsalo solo después de intentarlo)
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Cómo contribuir al proyecto
+| Documento | Descripción |
+|-----------|------------|
+| **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** | 📚 Explicación detallada de la metodología TDD y cómo funcionan los koans |
+| **[GUIA.md](GUIA.md)** | 🚀 Tutorial paso a paso con ejemplos completos |
+| **[SOLUCIONES.md](SOLUCIONES.md)** | ⚠️ Soluciones completas (úsalo solo DESPUÉS de intentarlo) |
+| **[CONTRIBUTING.md](CONTRIBUTING.md)** | 🤝 Cómo contribuir al proyecto |
 
 ## 🛠️ Comandos Útiles
-
-```bash
-# Ejecutar todos los tests
-cargo test
+ del workspace
+cargo test --workspace
 
 # Ejecutar tests de un koan específico
 cd 01_about_variables
@@ -165,6 +167,18 @@ cargo check
 cargo fmt
 
 # Ejecutar clippy (linter)
+cargo clippy --all-targets --all-features
+
+# Ejecutar específicamente los tests ignorados
+cargo test -- --ignored --nocapture
+```
+
+### VS Code Tasks (si usas extensión tasks)
+
+Presiona `Ctrl+Shift+P` y escribe:
+- `Tasks: Run Task` → `Run Current Koan Tests`
+- `Tasks: Run Task` → `Check Progress`
+- `Tasks: Run Task` → `Lint Code (Clippy)Ejecutar clippy (linter)
 cargo clippy
 ```
 
@@ -193,9 +207,54 @@ Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detal
 Inspirado por:
 - [Ruby Koans](https://github.com/edgecase/ruby_koans)
 - [Go Koans](https://github.com/cdarwin/go-koans)
-- [Rustlings](https://github.com/rust-lang/rustlings)
-- [The Rust Book](https://doc.rust-lang.org/book/)
+## ✨ Características
 
+✅ **10 Koans Progresivos** - Desde variables hasta módulos  
+✅ **Enfoque TDD** - Test-Driven Development desde el principio  
+✅ **Comparaciones Python ↔ Rust** - Aprende más rápido reconociendo patrones  
+✅ **Sin Soluciones Directas** - Aprende descubriendo, no copiando  
+✅ **Bien Documentado** - GUIA.md, COMO_FUNCIONA.md, SOLUCIONES.md  
+✅ **CI/CD Integrado** - GitHub Actions verifica el código automáticamente  
+✅ **Configuración VS Code** - Settings, tasks, debug automático  
+✅ **Scripts de Progreso** - Verifica tu avance en PowerShell o Bash  
+
+## 🎬 Quick Start Video Style
+
+```
+$ git clone https://github.com/jjmmolina/rust-koans-python-devs.git
+$ cd rust-koans-python-devs
+$ cd 01_about_variables
+$ cargo test              # ❌ Tests fallan
+$ code src/lib.rs         # 📝 Edita el archivo
+# ... implementa la solución ...
+$ cargo test              # ✅ ¡Tests pasan!
+$ cd ../02_about_ownership
+# ... repite 9 veces más ...
+$ cargo test --workspace  # ✅ ¡Todos los tests pasan!
+```
+
+## 🤔 FAQ
+
+**P: ¿Cuánto tiempo toma completar todos los koans?**  
+R: Depende de tu experiencia. Si vienes de Python: 20-40 horas. Si eres nuevo en programación: 40-60 horas.
+
+**P: ¿Puedo ver las soluciones?**  
+R: Sí, en [SOLUCIONES.md](SOLUCIONES.md), pero intenta resolver primero. El aprendizaje viene del proceso.
+
+**P: ¿Este proyecto es para principiantes?**  
+R: Sí, pero necesitas saber programación básica en Python (variables, funciones, bucles, etc.).
+
+**P: ¿Hay respuestas a los tests?**  
+R: Los tests definen claramente qué se espera. Los comentarios dan pistas. El descubrimiento es tu responsabilidad.
+
+**P: ¿Puedo contribuir nuevos koans?**  
+R: ¡Sí! Lee [CONTRIBUTING.md](CONTRIBUTING.md) para detalles.
+
+---
+
+**Creado con ❤️ para la comunidad de desarrolladores Python que quieren aprender Rust**
+
+**Si te gusta este proyecto, dale una ⭐ en GitHub!
 ## 📚 Recursos Adicionales
 
 - **The Rust Book**: https://doc.rust-lang.org/book/
