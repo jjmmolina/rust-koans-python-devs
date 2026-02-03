@@ -1,0 +1,9 @@
+[package]
+name = "about_lifetimes"
+version.workspace = true
+edition.workspace = true
+[lib]
+path = "src/lib.rs"
+[[test]]
+name = "tests"
+path = "tests/tests.rs"
