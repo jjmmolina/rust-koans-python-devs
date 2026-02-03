@@ -1,0 +1,20 @@
+[workspace]
+members = [
+    "01_about_variables",
+    "02_about_ownership",
+    "03_about_structs",
+    "04_about_traits",
+    "05_about_errors",
+    "06_about_collections",
+    "07_about_iterators",
+    "08_about_lifetimes",
+    "09_about_concurrency",
+    "10_about_modules",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Rust Koans Contributors"]
+license = "MIT"

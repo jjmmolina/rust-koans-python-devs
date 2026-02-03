@@ -1,0 +1,12 @@
+[package]
+name = "about_variables"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "about_variables"
+path = "src/lib.rs"
+
+[[test]]
+name = "tests"
+path = "tests/tests.rs"

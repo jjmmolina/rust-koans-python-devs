@@ -1,0 +1,210 @@
+# Rust Koans - Aprende Rust con TDD 🦀
+
+[![Rust Version](https://img.shields.io/badge/Rust-1.75+-orange?style=flat&logo=rust)](https://www.rust-lang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+> Aprende Rust mediante Test-Driven Development (TDD) con un enfoque especial para desarrolladores Python.
+
+## 🎯 ¿Qué son los Koans?
+
+Los Koans son ejercicios de programación que siguen el ciclo TDD:
+
+```
+🔴 Red → 🟢 Green → 🔵 Refactor
+```
+
+**🎓 Filosofía de Aprendizaje:**
+- ❌ **NO** te damos las soluciones directamente
+- ✅ Te damos **tests** que describen el comportamiento esperado
+- ✅ Te damos **pistas y hints** sobre cómo resolverlo en Rust
+- ✅ Te mostramos **comparaciones con Python** para facilitar la comprensión
+- ✅ Tú **implementas** la solución siguiendo los TODOs
+
+**Este es un viaje de descubrimiento, no de copiar y pegar.** 🚀
+
+## 🎯 ¿Para quién es esto?
+
+✅ Desarrolladores Python que quieren aprender Rust  
+✅ Personas que prefieren aprender haciendo  
+✅ Quienes buscan entender Rust mediante comparaciones con Python  
+✅ Desarrolladores que quieren dominar TDD en Rust  
+
+## 📋 Requisitos
+
+- Rust 1.75 o superior ([Instalar](https://www.rust-lang.org/tools/install))
+- VS Code (recomendado) con extensión rust-analyzer
+- Conocimientos básicos de Python
+- Ganas de aprender 😊
+
+## 🚀 Inicio Rápido
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/jjmmolina/rust-koans-python-devs.git
+   cd rust-koans-python-devs
+   ```
+
+2. **Ejecuta todos los tests** para ver cuántos fallan:
+   ```bash
+   cargo test
+   ```
+   Verás muchos tests rojos 🔴 - ¡esto es lo esperado!
+
+3. **Empieza con el primer koan**:
+   ```bash
+   cd 01_about_variables
+   cargo test
+   ```
+
+4. **Abre** `src/lib.rs` y busca los TODOs:
+   - Lee las comparaciones con Python
+   - Sigue las pistas en los comentarios
+   - Reemplaza `todo!()` y placeholders por las soluciones correctas
+
+5. **Ejecuta el test** hasta que pase 🟢:
+   ```bash
+   cargo test
+   ```
+
+6. **Repite** con cada koan siguiendo el orden numérico
+
+7. **Lee la [GUIA.md](GUIA.md)** para un ejemplo paso a paso completo
+
+## 📖 Cómo Usar los Koans
+
+Cada archivo `lib.rs` contiene:
+
+```rust
+// PASO 1: Explicación del concepto
+// En Python: ejemplo_python()
+// En Rust: ejemplo_rust()
+
+// TODO: Descripción clara de qué hacer
+pub fn mi_funcion() -> String {
+    todo!()  // ← Reemplaza esto
+}
+```
+
+**Tu trabajo:**
+1. Lee el comentario de comparación Python/Rust
+2. Lee el TODO
+3. Consulta los hints si los hay
+4. Implementa la solución
+5. Ejecuta `cargo test` para verificar
+
+**NO mires las soluciones en internet hasta que lo intentes primero!** 💪
+
+## 📚 Estructura del Proyecto
+
+```
+rust-koans/
+├── 01_about_variables/      # Variables, tipos, mutabilidad, shadowing
+│   ├── src/lib.rs           # ← Edita este archivo
+│   └── tests/tests.rs       # ← Los tests que deben pasar
+├── 02_about_ownership/      # Ownership, borrowing, referencias
+├── 03_about_structs/        # Structs, enums, pattern matching
+├── 04_about_traits/         # Traits, generics, trait bounds
+├── 05_about_errors/         # Result, Option, error handling
+├── 06_about_collections/    # Vec, HashMap, String
+├── 07_about_iterators/      # Iteradores, closures, map/filter
+├── 08_about_lifetimes/      # Lifetimes, referencias avanzadas
+├── 09_about_concurrency/    # Threads, channels, Arc, Mutex
+└── 10_about_modules/        # Módulos, crates, visibilidad
+```
+
+**Orden recomendado:** Sigue el orden numérico (01 → 10) ya que cada koan construye sobre los anteriores.
+
+## 💡 Consejos para Desarrolladores Python
+
+| Concepto | Python | Rust |
+|----------|--------|------|
+| **Mutabilidad** | Por defecto mutable | Por defecto inmutable (`let mut`) |
+| **Ownership** | Todo por referencia | Sistema único de ownership |
+| **None** | `None` | `Option<T>` con `Some(T)` o `None` |
+| **Excepciones** | `try/except` | `Result<T, E>` con `Ok(T)` o `Err(E)` |
+| **Clases** | `class Person:` | `struct Person {}` + `impl Person {}` |
+| **Herencia** | Herencia de clases | Composición + Traits |
+| **Duck Typing** | Implícito | Traits explícitos |
+| **GC** | Garbage collector | Ownership + RAII |
+
+**Diferencias clave:**
+- 🔸 Rust **no tiene garbage collector** - usa ownership
+- 🔸 Rust es **de tipos estáticos** con inferencia de tipos
+- 🔸 Rust requiere **manejo explícito de errores**
+- 🔸 Rust **previene race conditions** en tiempo de compilación
+- 🔸 Rust tiene **zero-cost abstractions**
+
+## 📖 Documentación Adicional
+
+- **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** - Explicación detallada de la metodología de koans
+- **[GUIA.md](GUIA.md)** - Tutorial paso a paso con ejemplos
+- **[SOLUCIONES.md](SOLUCIONES.md)** - ⚠️ Soluciones completas (úsalo solo después de intentarlo)
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Cómo contribuir al proyecto
+
+## 🛠️ Comandos Útiles
+
+```bash
+# Ejecutar todos los tests
+cargo test
+
+# Ejecutar tests de un koan específico
+cd 01_about_variables
+cargo test
+
+# Ejecutar un test específico
+cargo test test_nombre
+
+# Ver output detallado
+cargo test -- --nocapture
+
+# Verificar compilación sin ejecutar
+cargo check
+
+# Formatear código
+cargo fmt
+
+# Ejecutar clippy (linter)
+cargo clippy
+```
+
+## 🎓 Progreso
+
+Usa el script de progreso para ver cuántos koans has completado:
+
+```bash
+# Windows PowerShell
+.\check_progress.ps1
+
+# Linux/Mac
+./check_progress.sh
+```
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Lee [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
+
+## 🙏 Agradecimientos
+
+Inspirado por:
+- [Ruby Koans](https://github.com/edgecase/ruby_koans)
+- [Go Koans](https://github.com/cdarwin/go-koans)
+- [Rustlings](https://github.com/rust-lang/rustlings)
+- [The Rust Book](https://doc.rust-lang.org/book/)
+
+## 📚 Recursos Adicionales
+
+- **The Rust Book**: https://doc.rust-lang.org/book/
+- **Rust by Example**: https://doc.rust-lang.org/rust-by-example/
+- **Rustlings**: https://github.com/rust-lang/rustlings
+- **Rust Playground**: https://play.rust-lang.org/
+
+---
+
+**Creado con ❤️ para la comunidad de desarrolladores Python que quieren aprender Rust**
+
+¡Empieza tu viaje con Rust hoy! 🦀

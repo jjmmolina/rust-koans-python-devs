@@ -1,0 +1,12 @@
+[package]
+name = "about_traits"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "about_traits"
+path = "src/lib.rs"
+
+[[test]]
+name = "tests"
+path = "tests/tests.rs"

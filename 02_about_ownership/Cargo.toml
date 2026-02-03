@@ -1,0 +1,12 @@
+[package]
+name = "about_ownership"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "about_ownership"
+path = "src/lib.rs"
+
+[[test]]
+name = "tests"
+path = "tests/tests.rs"
