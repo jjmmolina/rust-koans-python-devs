@@ -1,11 +1,16 @@
 // Koan 04: Traits en Rust
 //
-// En Python usas herencia y duck typing.
-// En Rust usas traits para comportamiento compartido.
+// En Python: Polimorfismo implícito ("Duck Typing"). Si camina como pato...
+// En Rust: Polimorfismo explícito. Debes declarar "Este Struct implementa el Trait Pato".
+// Traits son como Interfaces en Java/C# o clases base abstractas en Python (ABC).
 
 // PASO 1: Definir un Trait
-// En Python: class base con métodos abstractos
-// En Rust: trait con firma de métodos
+// En Python:
+// class Hablador(ABC):
+//     @abstractmethod
+//     def hablar(self): pass
+// En Rust:
+// trait Hablador { fn hablar(&self) -> String; }
 
 // TODO: Define un trait Hablador con método hablar() -> String
 pub trait Hablador {
@@ -84,7 +89,11 @@ pub struct Punto {
 //     }
 // }
 
-// PASO 7: Trait Debug
+// PASO 7: Trait Debug (Auto-generación de código)
+// En Python: __repr__ suele ser automático o fácil de añadir.
+// En Rust: #[derive(Debug)] genera automáticamente el código para imprimir usando {:?}.
+// Es comparable a usar @dataclass en Python para obtener __repr__ gratis.
+
 // TODO: Deriva Debug para Rectangulo
 // #[derive(Debug)]
 pub struct Rectangulo {

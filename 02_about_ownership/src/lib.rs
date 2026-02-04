@@ -4,20 +4,23 @@
 // En Rust, cada valor tiene un único dueño y se libera cuando el dueño sale del scope.
 
 // PASO 1: Ownership Básico
-// En Python: s1 = "hello"; s2 = s1; # ambos apuntan al mismo objeto
-// En Rust: let s1 = String::from("hello"); let s2 = s1; // s1 ya no es válido (moved)
+// En Python: s1 = "hello"; s2 = s1; # Ambos apuntan a la misma memoria, Reference Counting maneja la vida.
+// En Rust: let s1 = String::from("hello"); let s2 = s1; 
+// ¡MOVIDO! s1 transfiere su propiedad a s2. s1 ya no es válido.
+// Si intentas usar s1 después, el compilador te gritará.
 
-// TODO: Retorna un String sin que ocurra un move
+// TODO: Retorna un String sin que ocurra un move (simplemente créalo y devuélvelo)
 pub fn crear_string() -> String {
     todo!()
     // Hint: String::from("Hola")
 }
 
-// PASO 2: Clone
-// En Python: import copy; s2 = copy.deepcopy(s1)
-// En Rust: let s2 = s1.clone();
+// PASO 2: Clone vs Copy
+// En Python: x = 5; y = x; # Enteros son inmutables, se copian por valor effectively.
+// En Rust: Tipos simples (enteros, bool) implementan 'Copy' y se copian automáticamente.
+// Pero tipos complejos (String, Vec) NO son Copy. Debes llamar .clone() explícitamente si quieres duplicar la data del Heap.
 
-// TODO: Clona un String y retorna ambos
+// TODO: Clona un String y retorna ambos (el original y la copia)
 pub fn clonar_string() -> (String, String) {
     let s1 = String::from("original");
     // TODO: Clona s1 en s2 y retorna (s1, s2)
@@ -83,8 +86,12 @@ pub fn primera_palabra(s: &str) -> &str {
     todo!()
 }
 
-// PASO 7: String vs &str
-// String: owned, heap-allocated, mutable
+// Esta es la duda #1 de los Pythonistas.
+// Python: 'str' sirve para todo (es un objeto en el Heap).
+// Rust tiene dos:
+// 1. String: Dueño, puede crecer, vive en Heap. (Piensa: StringBuilder o buffer de memoria).
+// 2. &str:  Vista/Prestado, tamaño fijo, puntero a memoria ajena. (Piensa: una ventana a un string).
+// Generalmente, funciones aceptan &str (más flexible) y structs poseen String.
 // &str: borrowed, puede ser stack o heap, inmutable
 
 // TODO: Convierte &str a String

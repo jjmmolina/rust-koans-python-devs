@@ -1,7 +1,13 @@
-// Koan 10: Módulos y Organización
-// mod, pub, use, crate
+// Koan 10: Módulos y Organización (Visibilidad)
+//
+// En Python: Todo es público por defecto. Usamos _guion para "sugerir" privado.
+// En Rust: Todo es PRIVADO por defecto. Debes usar declarativamente 'pub'.
 
-// TODO: Define un módulo público
+// PASO 1: Módulos y Visibilidad
+// mod nombre { ... } define un namespace.
+// Solo lo marcado con 'pub' es accesible desde fuera del módulo.
+
+// TODO: Define un módulo público, con función publica
 pub mod geometria {
     // TODO: Función pública
     pub fn calcular_area_rectangulo(ancho: u32, alto: u32) -> u32 {
@@ -9,10 +15,15 @@ pub mod geometria {
     }
     
     // Función privada (no pub)
+    // Intentar llamar a esto desde fuera causará error de compilación.
     fn funcion_privada() {
         println!("Solo visible dentro del módulo");
     }
 }
+
+// PASO 2: Imports (use)
+// 'use' crea atajos a items de otros módulos.
+// Similar a 'from module import function' en Python.
 
 // TODO: Usa 'use' para importar
 use geometria::calcular_area_rectangulo;
@@ -39,12 +50,13 @@ pub mod hijo {
     }
 }
 
-// TODO: Re-exportar con pub use
-pub use matematicas::algebra::sumar as suma_publica;
+// PASO 5: Encapsulamiento Real
+// A diferencia de Python donde 'self.saldo' es accesible si quieres...
+// En Rust, si un campo no es 'pub', ¡es realmente inaccesible desde otro módulo!
 
 // TODO: Struct con campos privados
 pub struct Cuenta {
-    saldo: f64,  // privado
+    saldo: f64,  // privado por defecto
 }
 
 impl Cuenta {
@@ -52,10 +64,12 @@ impl Cuenta {
         Cuenta { saldo: saldo_inicial }
     }
     
+    // Mutador seguro
     pub fn depositar(&mut self, cantidad: f64) {
         self.saldo += cantidad;
     }
     
+    // Getter
     pub fn obtener_saldo(&self) -> f64 {
         self.saldo
     }

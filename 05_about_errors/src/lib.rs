@@ -1,7 +1,8 @@
 // Koan 05: Manejo de Errores en Rust
 //
-// En Python usas try/except para excepciones.
-// En Rust usas Result<T, E> y Option<T> para errores.
+// En Python: Las excepciones interrumpen el flujo y saltan (unwind) hasta un 'except'.
+// En Rust: NO hay excepciones normales. Los errores son VALORES que se retornan.
+// Usas Result<T, E> para errores recuperables y panic! para bugs irrecuperables.
 
 // PASO 1: Option<T>
 // None en Python vs None en Rust
@@ -12,8 +13,10 @@ pub fn positivo(n: i32) -> Option<i32> {
     // Hint: if n > 0 { Some(n) } else { None }
 }
 
-// PASO 2: unwrap y expect
-// TODO: Usa unwrap para extraer el valor (panic si es None)
+// PASO 2: unwrap y expect (Peligro)
+// Equivalente a no poner try/except y dejar que el programa se estrelle.
+// Solo usar en tests o prototipos rápidos.
+// TODO: Usa unwrap para extraer el valor (panic! si es None)
 pub fn usar_unwrap(opt: Option<i32>) -> i32 {
     todo!()
     // Hint: opt.unwrap()
@@ -37,8 +40,11 @@ pub fn dividir(a: i32, b: i32) -> Result<i32, String> {
     // }
 }
 
-// PASO 4: Operador ?
-// Propaga errores automáticamente
+// PASO 4: Operador ? (Propagación)
+// Similar a no atrapar una excepción en Python y dejar que suba.
+// Si hay error, retorna Err automáticamente de la función actual.
+// Si hay éxito, desempaca el valor.
+// Reemplaza el boilerplate de 'match' repetitivos.
 pub fn leer_y_sumar(a_str: &str, b_str: &str) -> Result<i32, std::num::ParseIntError> {
     todo!()
     // Hint:

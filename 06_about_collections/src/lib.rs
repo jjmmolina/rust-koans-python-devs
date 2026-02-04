@@ -1,5 +1,12 @@
 // Koan 06: Colecciones en Rust
-// Vec<T>, HashMap, String
+//
+// En Python: lists, dicts y sets están integrados en el lenguaje.
+// En Rust: Vec<T>, HashMap<K,V> vienen de la std lib.
+// Diferencia clave: En Rust las colecciones son HOMOGÉNEAS (mismo tipo de datos).
+
+// PASO 1: Vectores (Vec<T>)
+// Equivalente a la lista de Python [1, 2, 3], pero tipada.
+// Crecen dinámicamente en el Heap.
 
 // TODO: Crea un vector vacío de i32
 pub fn crear_vector() -> Vec<i32> {
@@ -25,6 +32,11 @@ pub fn sumar_vector(v: &Vec<i32>) -> i32 {
     todo!()
 }
 
+// PASO 5: HashMap
+// Equivalente al dict de Python {'clave': valor}.
+// Requiere importar std::collections::HashMap.
+// Las claves deben implementar Hash y Eq.
+
 // TODO: Crea un HashMap
 use std::collections::HashMap;
 
@@ -34,7 +46,11 @@ pub fn crear_mapa() -> HashMap<String, i32> {
 
 // TODO: Inserta pares clave-valor
 pub fn usar_mapa() -> HashMap<String, i32> {
-    let mut map = HashMap::new();
+   PASO 6: Acceso seguro a Mapas
+// En Python: map['clave'] lanza KeyError si no existe, o usas map.get().
+// En Rust: map.get() retorna Option<&V>, obligándote a manejar el caso "no encontrado".
+
+//  let mut map = HashMap::new();
     // TODO: map.insert(String::from("azul"), 10);
     todo!()
 }

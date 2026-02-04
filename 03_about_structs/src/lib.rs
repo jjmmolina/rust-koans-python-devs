@@ -4,8 +4,9 @@
 // En Rust usas structs (datos) y enums (variantes).
 
 // PASO 1: Struct Básico
-// En Python: class Persona: def __init__(self, nombre, edad): ...
-// En Rust: struct Persona { nombre: String, edad: u32 }
+// En Python: class Persona: ... los datos y métodos van juntos dentro de la clase.
+// En Rust: struct Persona { ... } SOLO define la forma de los datos.
+// Los métodos se definen aparte en un bloque 'impl'. Separación de Estado y Comportamiento.
 
 // TODO: Define un struct Persona con campos nombre (String) y edad (u32)
 pub struct Persona {
@@ -49,9 +50,10 @@ pub fn crear_punto(x: f64, y: f64, z: f64) -> Punto3D {
     // Hint: Punto3D(x, y, z)
 }
 
-// PASO 4: Enums
-// En Python: usarías clases o constantes
-// En Rust: enum es un tipo algebraico
+// PASO 4: Enums (Enumeraciones)
+// En Python: Importas Enum. Son constantes con nombre (Color.RED).
+// En Rust: Son mucho más potentes. Pueden ser simples nombres, pero también tipos de datos complejos.
+// Es un "tagged union" o "Variant".
 
 // TODO: Define un enum Direccion con variantes: Norte, Sur, Este, Oeste
 pub enum Direccion {
@@ -94,9 +96,11 @@ pub fn procesar_mensaje(msg: Mensaje) -> String {
     //     Mensaje::Escribir(texto) => format!("Texto: {}", texto),
     // }
 }
-
-// PASO 7: Option<T>
-// En Python: None o valor
+ - ¡Adiós Null!
+// En Python: Cualquier variable puede ser None (o usas Optional[]).
+// En Rust: NO existe null. Si un valor puede faltar, DEBES usar Option<T>.
+// Option tiene dos estados: Some(T) (hay valor) o None (está vacío).
+// Esto te obliga a manejar el caso vacío siempre.
 // En Rust: Option::Some(valor) o Option::None
 
 // TODO: Retorna Some(42)
@@ -149,6 +153,10 @@ impl Direccion {
         // }
     }
 }
+// Sugar syntax para copiar campos de un struct viejo a uno nuevo.
+// Python similar: {**antigua, 'activo': True}
+// Rust: { activo: true, ..antigua }
+
 
 // PASO 10: Struct Update Syntax
 pub struct Configuracion {

@@ -73,6 +73,16 @@ Los Koans son ejercicios de programación que siguen el ciclo TDD:
 
 7. **Lee la [GUIA.md](GUIA.md)** para un ejemplo paso a paso completo
 
+## 📚 Documentación Rápida
+
+| Documento | Tiempo | Para Qué |
+|-----------|--------|----------|
+| **[QUICKSTART.md](QUICKSTART.md)** | 5 min ⚡ | Empieza ahora mismo |
+| **[GUIA.md](GUIA.md)** | 30 min 📖 | Tutorial completo paso a paso |
+| **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** | 20 min 🧠 | Entiende la metodología TDD |
+| **[CHEATSHEET.md](CHEATSHEET.md)** | 10 min 📋 | Referencia Python ↔ Rust |
+| **[SOLUCIONES.md](SOLUCIONES.md)** | ⚠️ Después | Soluciones (úsalo después de intentar) |
+
 ## 📖 Cómo Usar los Koans
 
 Cada archivo `lib.rs` contiene:
@@ -143,8 +153,13 @@ rust-koans/
 |-----------|------------|
 | **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** | 📚 Explicación detallada de la metodología TDD y cómo funcionan los koans |
 | **[GUIA.md](GUIA.md)** | 🚀 Tutorial paso a paso con ejemplos completos |
+| **[QUICKSTART.md](QUICKSTART.md)** | ⚡ Comienza en 5 minutos |
+| **[CHEATSHEET.md](CHEATSHEET.md)** | 📋 Python vs Rust - Referencia rápida |
 | **[SOLUCIONES.md](SOLUCIONES.md)** | ⚠️ Soluciones completas (úsalo solo DESPUÉS de intentarlo) |
+| **[CHANGELOG.md](CHANGELOG.md)** | 📝 Historial de versiones |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | 🤝 Cómo contribuir al proyecto |
+| **[SECURITY.md](SECURITY.md)** | 🔒 Política de seguridad |
+| **[MI_PROGRESO.md](MI_PROGRESO.md)** | ✅ Template para seguir tu progreso |
 
 ## 🛠️ Comandos Útiles
  del workspace
