@@ -81,22 +81,43 @@ Los Koans son ejercicios de programación que siguen el ciclo TDD:
 | **[GUIA.md](GUIA.md)** | 30 min 📖 | Tutorial completo paso a paso |
 | **[COMO_FUNCIONA.md](COMO_FUNCIONA.md)** | 20 min 🧠 | Entiende la metodología TDD |
 | **[CHEATSHEET.md](CHEATSHEET.md)** | 10 min 📋 | Referencia Python ↔ Rust |
+| **[MEJORES_PRACTICAS.md](MEJORES_PRACTICAS.md)** | 15 min 💎 | Patrones y código idiomático |
 | **[SOLUCIONES.md](SOLUCIONES.md)** | ⚠️ Después | Soluciones (úsalo después de intentar) |
 
 ## 📖 Cómo Usar los Koans
 
-Cada archivo `lib.rs` contiene:
+### 🎯 Estructura de Cada Koan
+
+Cada archivo `lib.rs` contiene **ejercicios graduales**:
 
 ```rust
 // PASO 1: Explicación del concepto
 // En Python: ejemplo_python()
 // En Rust: ejemplo_rust()
+// 
+// Concepto clave: Explicación detallada de por qué es diferente
 
 // TODO: Descripción clara de qué hacer
 pub fn mi_funcion() -> String {
-    todo!()  // ← Reemplaza esto
+    todo!()  // ← Reemplaza esto con tu código
+    // Hint: Pista de cómo hacerlo
 }
 ```
+
+### 💪 Estrategia de Aprendizaje Óptima
+
+1. **Lee primero SIN escribir código**: Entiende el contexto Python vs Rust
+2. **Lee el test**: Comprende qué se espera (el test es tu especificación)
+3. **Implementa gradualmente**: Un TODO a la vez, no saltes pasos
+4. **Ejecuta tests frecuentemente**: `cargo test` después de cada cambio
+5. **Lee los mensajes de error**: El compilador de Rust es tu mejor maestro
+6. **Experimenta**: Prueba variaciones, rompe cosas, aprende de los errores
+
+### 🎓 Tipos de Tests
+
+- **Tests normales**: Pasan cuando resuelves el TODO
+- **Tests con `#[ignore]`**: Requieren completar estructuras previas (descomenta cuando estés listo)
+- **Tests con mensajes**: Te guían con feedback específico si fallan
 
 **Tu trabajo:**
 1. Lee el comentario de comparación Python/Rust
@@ -251,16 +272,34 @@ $ cargo test --workspace  # ✅ ¡Todos los tests pasan!
 ## 🤔 FAQ
 
 **P: ¿Cuánto tiempo toma completar todos los koans?**  
-R: Depende de tu experiencia. Si vienes de Python: 20-40 horas. Si eres nuevo en programación: 40-60 horas.
+R: Depende de tu experiencia:
+- Con conocimientos de Python: 20-40 horas
+- Sin experiencia en sistemas/tipos: 40-60 horas
+- Completando todos los ejercicios de bonus: 60-80 horas
 
 **P: ¿Puedo ver las soluciones?**  
-R: Sí, en [SOLUCIONES.md](SOLUCIONES.md), pero intenta resolver primero. El aprendizaje viene del proceso.
+R: Sí, están en [SOLUCIONES.md](SOLUCIONES.md), pero **intenta resolver primero**. El verdadero aprendizaje viene del proceso de descubrimiento, los errores del compilador y el ciclo Red-Green-Refactor.
 
 **P: ¿Este proyecto es para principiantes?**  
-R: Sí, pero necesitas saber programación básica en Python (variables, funciones, bucles, etc.).
+R: Sí, pero necesitas:
+- ✅ Conocimientos básicos de Python (variables, funciones, bucles, clases)
+- ✅ Entender qué son los tests (aunque TDD sea nuevo para ti)
+- ✅ Paciencia con el compilador de Rust (es estricto pero útil)
 
-**P: ¿Hay respuestas a los tests?**  
-R: Los tests definen claramente qué se espera. Los comentarios dan pistas. El descubrimiento es tu responsabilidad.
+**P: ¿Los mensajes de error del compilador de Rust son difíciles?**  
+R: Al principio sí, pero el compilador de Rust es **el mejor maestro**. Lee los errores cuidadosamente:
+- Te dice exactamente dónde está el problema
+- Te sugiere soluciones
+- Te enseña los conceptos mientras programas
+
+**P: ¿Qué hago si me quedo atascado?**  
+R: En este orden:
+1. Lee el mensaje de error del compilador (¡seriamente!)
+2. Lee los comentarios y pistas en el código
+3. Revisa la sección de conceptos en [GUIA.md](GUIA.md)
+4. Busca en [CHEATSHEET.md](CHEATSHEET.md) la sintaxis
+5. Experimenta (romper cosas es parte del aprendizaje)
+6. Si después de 30 min sigues atascado, revisa [SOLUCIONES.md](SOLUCIONES.md)
 
 **P: ¿Puedo contribuir nuevos koans?**  
 R: ¡Sí! Lee [CONTRIBUTING.md](CONTRIBUTING.md) para detalles.

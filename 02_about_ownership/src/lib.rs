@@ -108,19 +108,21 @@ pub fn string_a_str(s: String) -> String {
 }
 
 // PASO 8: Ownership con Funciones
-// Pasar un valor a una función transfiere ownership
+// Pasar un valor a una función transfiere ownership (a menos que sea un tipo Copy como i32).
+// Si quieres mantener el ownership, debes clonar o usar referencias.
 
 pub fn tomar_ownership(s: String) -> usize {
     s.len()
-    // s se destruye aquí
+    // s se destruye aquí al salir del scope
 }
 
-// TODO: Llama tomar_ownership sin perder acceso al String
+// TODO: Llama tomar_ownership sin perder acceso al String original
+// Pista: Necesitas clonar el String o cambiar el approach
 pub fn mantener_acceso() -> (usize, String) {
     let texto = String::from("Rust");
-    // TODO: Clona texto antes de pasarlo, o usa referencia
-    // Opción 1: let len = tomar_ownership(texto.clone());
-    // Opción 2: Cambia la firma de tomar_ownership (no en este ejercicio)
+    // TODO: Solución: let len = tomar_ownership(texto.clone());
+    // O mejor aún: crea una función que tome &String en lugar de String
+    // Para este ejercicio, usa .clone()
     todo!()
 }
 
